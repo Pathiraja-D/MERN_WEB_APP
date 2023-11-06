@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import userRouter from './routes/user.route.js';
 dotenv.config();
 
 mongoose.connect("mongodb+srv://pathiraja:pathiraja%40123@mern-estate.gxhpbez.mongodb.net/?retryWrites=true&w=majority")
@@ -16,3 +17,5 @@ app.listen(3000,()=>{
     console.log('Server is running');
 });
 
+
+app.use('/api/user',userRouter);
